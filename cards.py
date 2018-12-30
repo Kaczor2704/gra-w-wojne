@@ -1,12 +1,10 @@
-import os
 import random
-import time
 
-cards = {str(val): val for val in range(2, 11)}
-cards[11] = "J"
-cards[12] = "Q"
-cards[13] = "K"
-cards[14] = "A"
+# cards = {str(val): val for val in range(2, 11)}
+# cards[11] = "J"
+# cards[12] = "Q"
+# cards[13] = "K"
+# cards[14] = "A"
 
 
 class Player:
@@ -25,7 +23,7 @@ class Player:
         exit(0)
 
     def set(self, card):
-        return self.hand.append(card)
+        return self.hand.extend(card)
 
 
 class Game:
@@ -72,12 +70,12 @@ class Game:
         print(f"Na stole:  1. {self.hand1}, 2. {self.hand2}")
 
         if h1 > h2:
-            self.players[0].hand.extend(self.hand1)
-            self.players[0].hand.extend(self.hand2)
+            self.players[0].set(self.hand1)
+            self.players[0].set(self.hand2)
             print(f"Wygrał {self.players[0].name}\n")
         elif h2 > h1:
-            self.players[1].hand.extend(self.hand1)
-            self.players[1].hand.extend(self.hand2)
+            self.players[1].set(self.hand1)
+            self.players[1].set(self.hand2)
             print(f"Wygrał {self.players[1].name}\n")
         else:
             # wojna!
