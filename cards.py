@@ -95,6 +95,8 @@ class Game:
         self.hand2 = []
 
 
+# TODO: wrzucić to w funkcję i zrobić __name__ == "__main__"
+        
 g = Game()
 g.deal()
 
