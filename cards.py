@@ -95,23 +95,25 @@ class Game:
         self.hand2 = []
 
 
-# TODO: wrzucić to w funkcję i zrobić __name__ == "__main__"
-        
-g = Game()
-g.deal()
+def go():
+    g = Game()
+    g.deal()
 
-while g.players[0].hand and g.players[1].hand:
-    # os.system("clear")
-    print(f"RUNDA {g.round_no}.")
-    print(f"{g.players[0]}")
-    print(f"{g.players[1]}")
-    g.play()
-    g.round_no += 1
-    if g.round_no % 10 == 0:
-        print("tasowanie")
-        random.shuffle(g.players[0].hand)
-        random.shuffle(g.players[1].hand)
+    while g.players[0].hand and g.players[1].hand:
+        print(f"RUNDA {g.round_no}.")
+        print(f"{g.players[0]}")
+        print(f"{g.players[1]}")
+        g.play()
+        g.round_no += 1
+        if g.round_no % 10 == 0:
+            print("tasowanie")
+            random.shuffle(g.players[0].hand)
+            random.shuffle(g.players[1].hand)
 
-winner = g.players[1] if not g.players[0].hand else g.players[0]
-print(f"\nZwycięzca: {winner.name}")
+    winner = g.players[1] if not g.players[0].hand else g.players[0]
+    print(f"\nZwycięzca: {winner.name}")
+
+
+if __name__ == "__main__":
+    go()
 
