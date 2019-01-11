@@ -1,11 +1,5 @@
 import random
 
-# cards = {str(val): val for val in range(2, 11)}
-# cards[11] = "J"
-# cards[12] = "Q"
-# cards[13] = "K"
-# cards[14] = "A"
-
 
 class Player:
 
@@ -116,4 +110,3 @@ def go():
 
 if __name__ == "__main__":
     go()
-
